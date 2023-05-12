@@ -1,0 +1,131 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Roboto, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto");
+  src: url("../../fonts/Roboto/Roboto-Medium.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calendar__calendar-wrapper {
+  width: 210px;
+  padding: 10px;
+}
+
+.calendar__calendar-caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #dde1dd;
+  color: #212723;
+}
+
+td {
+  border: 1px black solid;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.calendar__button {
+  cursor: pointer;
+}
+
+.calendar__thead-tr-th {
+  color: #b0b5b0;
+}
+
+.calendar__tbody_this-month {
+  color: #000000;
+}
+
+.calendar__tbody_other-month {
+  color: #656765;
+}
+
+.calendar__tbody_today {
+  background-color: #a9efa9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.to-do-list__wrapper {
+  width: 80%;
+  padding: 20px;
+}
+
+.to-do-list__add-task-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+}
+
+.to-do-list__input-new-task {
+  margin: 15px;
+  width: 500px;
+  height: 30px;
+  font-size: 14px;
+}
+.to-do-list__input-new-task::placeholder {
+  color: #615e5e;
+}
+
+.to-do-list__create-task-button {
+  width: 100px;
+  height: 30px;
+  margin: 0 10px;
+  color: #212723;
+  border: 1px solid #8e8787;
+  background-color: #d4cdcd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.to-do-list__create-task-button:hover {
+  background-color: #d4cdcd;
+  color: #f1e9e9;
+}
+
+.to-do-list__task {
+  background-color: #f1e9e9;
+  margin: 10px;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.to-do-list__invalid-input {
+  border: 1px solid red;
+}
+
+.to-do-list__delete-button {
+  cursor: pointer;
+  user-select: none;
+  color: red;
+}
+
+/*# sourceMappingURL=index.css.map */

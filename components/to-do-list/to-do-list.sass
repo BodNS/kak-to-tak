@@ -1,0 +1,53 @@
+@import '../../assets/sass/base/_reset'
+
+
+.to-do-list__wrapper
+    width: 80%
+    padding: 20px
+
+.to-do-list__add-task-container
+    display: flex
+    flex-direction: row
+    align-items: center
+    width: 90%
+    
+.to-do-list__input-new-task
+    margin: 15px
+    width: 500px
+    height: 30px
+    font-size: 14px
+    &::placeholder
+        color: $to-do-list__placeholder-color
+    
+.to-do-list__create-task-button
+    width: 100px
+    height: 30px
+    margin: 0 10px
+    color: $to-do-list__create-task-button_color
+    border: 1px solid $to-do-list__create-task-button_border
+    background-color: $to-do-list__create-task-button_background-color
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    &:hover
+        background-color: $to-do-list__create-task-button_background-color
+        color: $to-do-list__create-task-button_hover-color
+   
+
+.to-do-list__task
+    margin: 10px
+    padding: 7px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    list-style-type: none
+    
+.to-do-list__invalid-input
+    border: 1px solid red
+
+.to-do-list__delete-button
+    cursor: pointer
+    user-select: none
+    color: red
