@@ -1,4 +1,4 @@
-@import '../../assets/sass/base/_reset'
+@import '../base/_reset'
 
 
 .to-do-list__wrapper
@@ -29,11 +29,11 @@
     display: flex
     align-items: center
     justify-content: center
+    user-select: none 
     
     &:hover
-        background-color: $to-do-list__create-task-button_background-color
-        color: $to-do-list__create-task-button_hover-color
-   
+        background-color: $to-do-list__create-task-button_border
+        color: $to-do-list__create-task-button_hover-color   
 
 .to-do-list__task
     margin: 10px
@@ -43,6 +43,7 @@
     justify-content: space-between
     align-items: center
     list-style-type: none
+    background-color: $to-do-list__task_background-color
     
 .to-do-list__invalid-input
     border: 1px solid red

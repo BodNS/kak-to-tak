@@ -1,0 +1,43 @@
+@import "../abstract/_constants"
+@import "../base/_base"
+@import "../base/_fonts"
+@import "../base/_reset"
+
+.calendar__calendar-wrapper
+    width: $calendar__cell-width*7
+    padding: 10px
+    user-select: none 
+
+
+.calendar__calendar-caption
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 5px
+    background-color: $calendar__caption-background-color
+    color: $calendar__caption-color
+
+td
+    border: 1px black solid
+    width: $calendar__cell-width
+    height: $calendar__cell-height
+    text-align: center
+    
+
+.calendar__button
+    cursor: pointer
+
+.calendar__thead-tr-th
+    color: $calendar__thead-color
+
+.calendar__tbody_this-month
+    color: $calendar__date-color
+    cursor: pointer
+
+.calendar__tbody_other-month
+    color: $calendar__other-month-date-color
+    pointer-events: none
+
+.calendar__tbody_today
+    background-color: $calendar__today-color
