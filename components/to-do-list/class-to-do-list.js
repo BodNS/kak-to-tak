@@ -6,8 +6,7 @@ export class ToDoList {
 
   showTasks() {
     const addTaskButton = document.getElementById("create-task");
-   // const inputText = document.querySelector(".to-do-list__input-new-task");
-
+ 
     addTaskButton.addEventListener("click", () => this.addTask());  //this.addTask.bind(this)
     this.tasksListContainer.addEventListener("click", this.delTask);
     this.inputText.addEventListener("keydown", (event)=> {if (event.code == "Enter" || event.code == "NumpadEnter") this.addTask()});
@@ -54,6 +53,7 @@ export class ToDoList {
       isValid = false;
       taskId++;
       localStorage.setItem("taskId", taskId);
+      this.inputText.classList.remove("to-do-list__invalid-input");
     }
   }
 
@@ -66,13 +66,19 @@ export class ToDoList {
   }
 
   testInput() {
-    if (this.inputText.value.length > 0 && this.inputText.value.length <= 500)
+    let nowDate = new Date ();
+    nowDate.setHours(0, 0, 0, 0);
+    let taskDate = sessionStorage.getItem("calendarDate");
+    taskDate = new Date(taskDate.split(".").reverse().join("-"));
+    
+    if (this.inputText.value.length > 0 && this.inputText.value.length <= 500 && taskDate > nowDate)
       return true;
     else {
       this.inputText.classList.add("to-do-list__invalid-input");
       if (this.inputText.value.length == 0) alert("Can't add empty task!");
       if (this.inputText.value.length > 1000)
         alert('Maximal size of task"s text is 500 symbol.');
+      if (taskDate > nowDate) alert ("Task's date can't be less than today's date");   
     return false;
     }
   }
