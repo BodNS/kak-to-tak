@@ -5,8 +5,8 @@ export class ToDoList {
   }
 
   showTasks() {
+    const tasksArray = [];
     const addTaskButton = document.getElementById("create-task");
- 
     addTaskButton.addEventListener("click", () => this.addTask());  //this.addTask.bind(this)
     this.tasksListContainer.addEventListener("click", this.delTask);
     this.inputText.addEventListener("keydown", (event)=> {if (event.code == "Enter" || event.code == "NumpadEnter") this.addTask()});
@@ -17,6 +17,7 @@ export class ToDoList {
       if (key === "taskId") continue;
       let value = localStorage.getItem(key);
       console.log(key, " : ", value);
+      
       this.renderTask(key, value);
     }
   }
@@ -78,7 +79,7 @@ export class ToDoList {
       if (this.inputText.value.length == 0) alert("Can't add empty task!");
       if (this.inputText.value.length > 1000)
         alert('Maximal size of task"s text is 500 symbol.');
-      if (taskDate > nowDate) alert ("Task's date can't be less than today's date");   
+      if (taskDate < nowDate) alert ("Task's date can't be less than today's date");   
     return false;
     }
   }
