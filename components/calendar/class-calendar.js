@@ -25,7 +25,7 @@ export class Calendar {
     };
 
     const storageCalendarDay = ((this.todayDate.getDate()) - 10 < 0)? '0'+(this.todayDate.getDate()) : (this.todayDate.getDate());
-    const storageCalendarMonth = ((this.todayDate.getMonth()+1) - 10 < 10)? '0'+(this.todayDate.getMonth()+1) : (this.todayDate.getMonth()+1);
+    const storageCalendarMonth = ((this.todayDate.getMonth()+1) - 10 < 0)? '0'+(this.todayDate.getMonth()+1) : (this.todayDate.getMonth()+1);
     const storageCalendarDate = `${storageCalendarDay}.${storageCalendarMonth}.${this.todayDate.getFullYear()}`;
     sessionStorage.setItem("calendarDate", storageCalendarDate);
 

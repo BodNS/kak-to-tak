@@ -1,7 +1,7 @@
-//import { showTasks } from './show-tasks.js';
 import { ToDoList } from "./class-to-do-list.js";
 
 if (!localStorage.getItem("taskId")) localStorage.setItem("taskId", 1);
+if (!localStorage.getItem("tasksData")) localStorage.setItem("tasksData", JSON.stringify([]));
 
 const toDoListWrapper = document.createElement('div');
 toDoListWrapper.classList.add('to-do-list__wrapper');
@@ -32,5 +32,5 @@ tasksListContainer.classList.add('to-do-list__tasks-list');
 toDoListWrapper.append(addTaskContainer, hr, tasksListContainer);
 
 const tasksList = new ToDoList(tasksListContainer);
-tasksList.showTasks();
+tasksList.addListeners();
 
