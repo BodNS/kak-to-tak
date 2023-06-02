@@ -12,7 +12,13 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(sass|css)$/, use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]}
+      { test: /\.(sass|css)$/, 
+        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]},
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
     ]
     },
   plugins: [
@@ -30,6 +36,10 @@ module.exports = {
                     },
                   },
                 }),
-  ]
+  ],
+  devServer: {
+       watchFiles: path.join(__dirname, 'src'),
+       port: 9000,
+     },
   
 };
